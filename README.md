@@ -28,5 +28,25 @@ When data is broken down to “product” (Uber or Lyft), Uber does not have any
 
 As for the Lyft data, there is a serious imbalance between the ratio of surged and non-surged rides in the Lyft data. The surged rides account for less than 2% of the total Lyft data. This imbalance means that there is not a large enough or representative sample of observations from the minority class (surged rides). We will need to address this issue before training our classification models. <br>
 
-From this point on, our report will only discuss the Lyft data set.
+From this point on, our report will only discuss the Lyft data set. <br>
+
+Another issue is the short time frame that the Lyft data covers. Throughout the span of three weeks, there is a lack of data on nine days in December. This affects the accuracy of how we analyze demand at different hours of the day and on different days of the week.
+
+![](https://ppt.cc/f5hWZx@.png)
+
+-	**Correlations Among Variables** <br>
+After the data processing step, there are 18 variables in the Lyft data set. Firstly, we need to explore the correlations among variables to identify any strong relationships among them and have initial hypotheses about the factors that decide the surge and the price of rides.
+
+-	**Price** <br>
+Based on the heatmap, “price” is strongly correlated with “base fare”, “cost per minute”, and “cost per minimum fare”. This is predictable as those variables are the main elements of the price of a ride. Unsurprisingly, “price” is also positively related to “distance” and “surge multiplier”.
+
+![](https://ppt.cc/f8Bgbx@.png)
+
+-	**Cab Type** <br>
+The boxplot shows that Lyft Shared has the lowest median price, followed by Lyft. Lyft Lux Black XL has the highest number of outliers.
+
+![](https://ppt.cc/fJ1iUx@.png)
+
+
+
 
