@@ -47,6 +47,9 @@ The boxplot shows that Lyft Shared has the lowest median price, followed by Lyft
 
 ![](https://ppt.cc/fJ1iUx@.png)
 
+-	**Ride time** <br>
+From 9 am to 6 pm or on Wednesday and Thursday, there are more surge rides than average.
 
-
+![](https://ppt.cc/fTttOx@.png)
+![](https://ppt.cc/faSFix@.png)
 
