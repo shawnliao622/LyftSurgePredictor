@@ -124,6 +124,6 @@ The figures above show that there is no single PC which explains much more varia
 
 Based on our results of the classification models we used, we have found that the best models are linear regression, logistic regression, and the combined models. This is based on these three models having the highest Accuracy, AUC, Sensitivity, and Specificity. The accuracy for linear regression is 0.55, logistic regression is 0.56, and combined models is 0.56. The AUC for linear regression is 0.719, logistic regression is 0.720, and combined models is 0.571. The Sensitivity for linear regression is 0.83, logistic regression is 0.82, and combined models is 0.83. The Specificity for linear regression is 0.53, logistic regression is 0.54, and combined models is 0.54. Since these models have the highest values, they should be the models considered for predicting whether or not there is a surge. <br>
 
-	Another thing that we found from performing these models is which variables are important and not important for predicting whether or not there is a surge. The variables that are important include distance, source, temperature, and rush hour. The variables that aren’t important include month and weekday. 
+Another thing that we found from performing these models is which variables are important and not important for predicting whether or not there is a surge. The variables that are important include distance, source, temperature, and rush hour. The variables that aren’t important include month and weekday. 
 
 
