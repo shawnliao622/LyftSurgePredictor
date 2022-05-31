@@ -110,4 +110,20 @@ Another model that performed decently well on our data set was the XGBoost model
 
 the above lift chart tells us that the XGBoost model does a decent job in predicting surge compared to baseline. We tried several iterations of the model using several different combinations of variables involved all resulting in different accuracies, our best sensitivity score was achieved by dropping the full cab name from the dataset. XGBoost also has the ability to give us variable importance, i.e what variables contribute the most in identifying surge, surprisingly when source and destination was not removed from the data, certain specific locations (North End and Haymarket square) contributed highly to surge, indicating taking a ride from specific location increases the probability of ending up with a surge. 
 
+-	**Combined Modeling Approach** <br>
+In an attempt to extend the concept of ensemble techniques to other models, our group thought it would be a good idea to use models from different classes and sub brackets and combine their respective forecasts to make perhaps better prediction compared to a singular model. We also thought that this approach would work well with companies who have the money to manage infrastructure to run more than one model and process so much data. We chose the three best models from our current set and decided to take a majority vote on the class prediction; this majority would be the prediction for our combined model. Accuracies were then calculated based on these new values. Based on our values, the combined model did not drastically change performance, however came very close to our best model. Trying this approach with too many models deteriorated our accuracy. It was interesting to try this approach and gain insights into our hypothesis. 
+
+-	**Principal Component Analysis** <br>
+Principal Component Analysis (PCA) is a dimension – reduction method, which computes the eigenvector matrix and Singular Value Decomposition (SVD) to implement the orthogonal transformation to change the axes. The target of PCA is to find as few features (directions) as possible and obtain the greater variance to be explained. Our data set has not too many features, but we can still use PCA to try to reduce the redundant independent variables.
+
+![](https://ppt.cc/f6p01x@.png)
+
+The figures above show that there is no single PC which explains much more variance than others. Therefore, PCA may not be useful in our data set. Therefore, we gave up using PCA in our models.
+
+### 7. Conclusion
+
+Based on our results of the classification models we used, we have found that the best models are linear regression, logistic regression, and the combined models. This is based on these three models having the highest Accuracy, AUC, Sensitivity, and Specificity. The accuracy for linear regression is 0.55, logistic regression is 0.56, and combined models is 0.56. The AUC for linear regression is 0.719, logistic regression is 0.720, and combined models is 0.571. The Sensitivity for linear regression is 0.83, logistic regression is 0.82, and combined models is 0.83. The Specificity for linear regression is 0.53, logistic regression is 0.54, and combined models is 0.54. Since these models have the highest values, they should be the models considered for predicting whether or not there is a surge. <br>
+
+	Another thing that we found from performing these models is which variables are important and not important for predicting whether or not there is a surge. The variables that are important include distance, source, temperature, and rush hour. The variables that aren’t important include month and weekday. 
+
 
