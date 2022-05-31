@@ -24,9 +24,9 @@ We have also added a binary independent variable based on the given data to faci
 -	**Issues in the data set** <br>
 When data is broken down to “product” (Uber or Lyft), Uber does not have any surge rides. As our project objective is to predict a surge in the fare, we have decided to filter out Uber data and focus on Lyft data.
 
-![](https://ppt.cc/fJIYwx@.png)
+![](https://ppt.cc/fJIYwx@.png) <br>
 
-As for the Lyft data, there is a serious imbalance between the ratio of surged and non-surged rides in the Lyft data. The surged rides account for less than 2% of the total Lyft data. This imbalance means that there is not a large enough or representative sample of observations from the minority class (surged rides). We will need to address this issue before training our classification models. <br>
+    As for the Lyft data, there is a serious imbalance between the ratio of surged and non-surged rides in the Lyft data. The surged rides account for less than 2% of the total Lyft data. This imbalance means that there is not a large enough or representative sample of observations from the minority class (surged rides). We will need to address this issue before training our classification models. <br>
 
     From this point on, our report will only discuss the Lyft data set. <br>
 
