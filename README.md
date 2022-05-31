@@ -26,11 +26,11 @@ When data is broken down to “product” (Uber or Lyft), Uber does not have any
 
 ![](https://ppt.cc/fJIYwx@.png)
 
-As for the Lyft data, there is a serious imbalance between the ratio of surged and non-surged rides in the Lyft data. The surged rides account for less than 2% of the total Lyft data. This imbalance means that there is not a large enough or representative sample of observations from the minority class (surged rides). We will need to address this issue before training our classification models. <br>
+    As for the Lyft data, there is a serious imbalance between the ratio of surged and non-surged rides in the Lyft data. The surged rides account for less than 2% of the total Lyft data. This imbalance means that there is not a large enough or representative sample of observations from the minority class (surged rides). We will need to address this issue before training our classification models. <br>
 
-From this point on, our report will only discuss the Lyft data set. <br>
+    From this point on, our report will only discuss the Lyft data set. <br>
 
-Another issue is the short time frame that the Lyft data covers. Throughout the span of three weeks, there is a lack of data on nine days in December. This affects the accuracy of how we analyze demand at different hours of the day and on different days of the week.
+    Another issue is the short time frame that the Lyft data covers. Throughout the span of three weeks, there is a lack of data on nine days in December. This affects the accuracy of how we analyze demand at different hours of the day and on different days of the week.
 
 ![](https://ppt.cc/f5hWZx@.png)
 
@@ -90,25 +90,25 @@ Using our research question, classification trees won’t be the best predictor 
 -	**K-Nearest Neighbors** <br>
 To avoid the “Curse of Dimensionality,” which is especially problematic for the K-Nearest Neighbors algorithm, we reduce the dimensionality by only choosing the features that capture the essence of the data. For instance, we exclude “source” and “destination” from the model and only include “distance.” In that case, it becomes less computationally expensive to find the nearest neighbors. <br>
 
-Since the original dataset is extremely imbalanced, we found it hard for the algorithm to capture the surge multiplier. Under the circumstances, we ran a for loop to find the best K with the highest sensitivity for the validation data, instead of the accuracy. As K increases, both the training and validation error rate increase accordingly. The chart below indicates that the sensitivity reaches its peak when K equals to 15. After that, it starts to decrease gradually. Therefore, we select K = 15 when running the algorithm. 
+    Since the original dataset is extremely imbalanced, we found it hard for the algorithm to capture the surge multiplier. Under the circumstances, we ran a for loop to find the best K with the highest sensitivity for the validation data, instead of the accuracy. As K increases, both the training and validation error rate increase accordingly. The chart below indicates that the sensitivity reaches its peak when K equals to 15. After that, it starts to decrease gradually. Therefore, we select K = 15 when running the algorithm. 
 
 ![](https://ppt.cc/fCFU1x@.png)
 
 -	**Naïve Bayes** <br>
 One of the advantages of Naïve Bayes Algorithm is that it can handle well when the number of predictors are large. Hence, we transform all the categorical variables to factor and put all the variables in the model. The performance of prediction is quite solid, with a sensitivity of 0.735. <br>
 
-However, if running the Naïve Bayes Algorithm using all the variables, we are not able to get the insight about the importance of each predictor. Therefore, we ran the model with a certain variable and compared the result with the model without that variable to check the importance of the variable. By doing so, we found out that using only source, distance, weekday_dummy, and time_of_day variables can receive the same result as the original model. Hence, these four variables are important for prediction. 
+    However, if running the Naïve Bayes Algorithm using all the variables, we are not able to get the insight about the importance of each predictor. Therefore, we ran the model with a certain variable and compared the result with the model without that variable to check the importance of the variable. By doing so, we found out that using only source, distance, weekday_dummy, and time_of_day variables can receive the same result as the original model. Hence, these four variables are important for prediction. 
 
 -	**Ensemble Techniques** <br>
 Just as consulting multiple experts before forming an opinion or making a decision is important, the same thought process can be extended to Machine learning models. Since the data we dealt with was largely imbalanced, it became a much harder challenge to actually predict surge values. Our idea behind implementing ensemble techniques was to make use of the rich predictive power and also hyper tune several model parameters. 
 
-Boosting and ensemble technique, that often considers homogeneous weak learners, learns them sequentially in a very adaptive way (a base model depends on the previous ones) and combines them following a deterministic strategy (Rocca, 2019). On learning more about the gbm package in R, we were able to understand that the model allows us to tune several different parameters in order to fit our data the best. The common hyper parameters that people generally tune are as follows - Trees, Depth and subsampling. We wanted to apply some extension of hyperparameter tuning using grid search to our project. Hence we ran a loop to select the best parameters that minimize the RMSE of the training data. The interesting thing about the boosting model was how poorly the model performed on our data, with a sensitivity of just 0.60, the model was unable to capture basic trends in the data. As per the importance plot, it regarded variables such as distance and time of the day as superior predictors. 
+    Boosting and ensemble technique, that often considers homogeneous weak learners, learns them sequentially in a very adaptive way (a base model depends on the previous ones) and combines them following a deterministic strategy (Rocca, 2019). On learning more about the gbm package in R, we were able to understand that the model allows us to tune several different parameters in order to fit our data the best. The common hyper parameters that people generally tune are as follows - Trees, Depth and subsampling. We wanted to apply some extension of hyperparameter tuning using grid search to our project. Hence we ran a loop to select the best parameters that minimize the RMSE of the training data. The interesting thing about the boosting model was how poorly the model performed on our data, with a sensitivity of just 0.60, the model was unable to capture basic trends in the data. As per the importance plot, it regarded variables such as distance and time of the day as superior predictors. 
 
-Another model that performed decently well on our data set was the XGBoost model. The XGBoost model is the optimized gradient boosting algorithm. It contains the power to parallel process, prune trees, handle missing values and over restrict over and underfitting. We made use of the inbuilt cross validation capability to help us identify the best parameters and optimal rounds. 
+    Another model that performed decently well on our data set was the XGBoost model. The XGBoost model is the optimized gradient boosting algorithm. It contains the power to parallel process, prune trees, handle missing values and over restrict over and underfitting. We made use of the inbuilt cross validation capability to help us identify the best parameters and optimal rounds. 
 
-![](https://ppt.cc/fR0c5x@.png)
+    ![](https://ppt.cc/fR0c5x@.png)
 
-the above lift chart tells us that the XGBoost model does a decent job in predicting surge compared to baseline. We tried several iterations of the model using several different combinations of variables involved all resulting in different accuracies, our best sensitivity score was achieved by dropping the full cab name from the dataset. XGBoost also has the ability to give us variable importance, i.e what variables contribute the most in identifying surge, surprisingly when source and destination was not removed from the data, certain specific locations (North End and Haymarket square) contributed highly to surge, indicating taking a ride from specific location increases the probability of ending up with a surge. 
+    The above lift chart tells us that the XGBoost model does a decent job in predicting surge compared to baseline. We tried several iterations of the model using several different combinations of variables involved all resulting in different accuracies, our best sensitivity score was achieved by dropping the full cab name from the dataset. XGBoost also has the ability to give us variable importance, i.e what variables contribute the most in identifying surge, surprisingly when source and destination was not removed from the data, certain specific locations (North End and Haymarket square) contributed highly to surge, indicating taking a ride from specific location increases the probability of ending up with a surge. 
 
 -	**Combined Modeling Approach** <br>
 In an attempt to extend the concept of ensemble techniques to other models, our group thought it would be a good idea to use models from different classes and sub brackets and combine their respective forecasts to make perhaps better prediction compared to a singular model. We also thought that this approach would work well with companies who have the money to manage infrastructure to run more than one model and process so much data. We chose the three best models from our current set and decided to take a majority vote on the class prediction; this majority would be the prediction for our combined model. Accuracies were then calculated based on these new values. Based on our values, the combined model did not drastically change performance, however came very close to our best model. Trying this approach with too many models deteriorated our accuracy. It was interesting to try this approach and gain insights into our hypothesis. 
@@ -116,9 +116,9 @@ In an attempt to extend the concept of ensemble techniques to other models, our 
 -	**Principal Component Analysis** <br>
 Principal Component Analysis (PCA) is a dimension – reduction method, which computes the eigenvector matrix and Singular Value Decomposition (SVD) to implement the orthogonal transformation to change the axes. The target of PCA is to find as few features (directions) as possible and obtain the greater variance to be explained. Our data set has not too many features, but we can still use PCA to try to reduce the redundant independent variables.
 
-![](https://ppt.cc/f6p01x@.png)
+    ![](https://ppt.cc/f6p01x@.png)
 
-The figures above show that there is no single PC which explains much more variance than others. Therefore, PCA may not be useful in our data set. Therefore, we gave up using PCA in our models.
+    The figures above show that there is no single PC which explains much more variance than others. Therefore, PCA may not be useful in our data set. Therefore, we gave up using PCA in our models.
 
 ### 7. Conclusion
 
