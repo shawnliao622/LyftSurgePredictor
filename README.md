@@ -32,7 +32,7 @@ When data is broken down to “product” (Uber or Lyft), Uber does not have any
 
     Another issue is the short time frame that the Lyft data covers. Throughout the span of three weeks, there is a lack of data on nine days in December. This affects the accuracy of how we analyze demand at different hours of the day and on different days of the week.
 
-![](https://ppt.cc/f5hWZx@.png)
+    ![](https://ppt.cc/f5hWZx@.png)
 
 -	**Correlations Among Variables** <br>
 After the data processing step, there are 18 variables in the Lyft data set. Firstly, we need to explore the correlations among variables to identify any strong relationships among them and have initial hypotheses about the factors that decide the surge and the price of rides.
@@ -85,7 +85,7 @@ The same issue of the perfect multicollinearity appears when we run the Logistic
 -	**Classification Tree** <br>
 Using our research question, classification trees won’t be the best predictor for Lyft surges. Though trees are easy to explain and interpret, they aren’t the best predictors especially when we lower the amount of oversampled data. Classification trees perform better with more data which was the case when we used more oversampled data versus less oversampled data. The accuracy of the trees with less oversampled data is 0.38 and with more oversampled data it’s 0.68. Due to these low accuracy rates, this classification model is not the best case to predict the Lyft surges.  We decided to remove the source and destination variables because when we initially created the trees, they weren’t evident in them. Below is the summary information for the classification tree: 
 
-![](https://ppt.cc/fmqrpx@.png)
+    ![](https://ppt.cc/fmqrpx@.png)
 
 -	**K-Nearest Neighbors** <br>
 To avoid the “Curse of Dimensionality,” which is especially problematic for the K-Nearest Neighbors algorithm, we reduce the dimensionality by only choosing the features that capture the essence of the data. For instance, we exclude “source” and “destination” from the model and only include “distance.” In that case, it becomes less computationally expensive to find the nearest neighbors. <br>
