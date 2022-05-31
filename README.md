@@ -24,4 +24,4 @@ We have also added a binary independent variable based on the given data to faci
 -	**Issues in the data set** <br>
 When data is broken down to “product” (Uber or Lyft), Uber does not have any surge rides. As our project objective is to predict a surge in the fare, we have decided to filter out Uber data and focus on Lyft data.
 
-![]([https://ppt.cc/fCX4Jx@.png](https://ppt.cc/fCaizx))
+![](https://ppt.cc/fCaizx@.png)
