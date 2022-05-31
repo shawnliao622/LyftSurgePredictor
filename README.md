@@ -32,7 +32,7 @@ From this point on, our report will only discuss the Lyft data set. <br>
 
 Another issue is the short time frame that the Lyft data covers. Throughout the span of three weeks, there is a lack of data on nine days in December. This affects the accuracy of how we analyze demand at different hours of the day and on different days of the week.
 
-    ![](https://ppt.cc/f5hWZx@.png)
+![](https://ppt.cc/f5hWZx@.png)
 
 -	**Correlations Among Variables** <br>
 After the data processing step, there are 18 variables in the Lyft data set. Firstly, we need to explore the correlations among variables to identify any strong relationships among them and have initial hypotheses about the factors that decide the surge and the price of rides.
