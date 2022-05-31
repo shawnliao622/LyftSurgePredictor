@@ -73,11 +73,11 @@ The classification methods we used include ensemble methods, bagging, boosting, 
 -	**Linear Probability Model** <br>
 Linear Probability Model is usually not a best choice for classification because it could result in the probability greater than 1 or less than 0, and is often affected by the outliers. However, as the basic model, it is a good choice to treat such model as the baseline. When we run this model, the result shows that the coefficient of “destination” is NA and the predict function has the warning "prediction from a rank-deficient fit may be misleading". These imply that our data has the perfect multicollinearity even though we have checked the correlation between features before. Therefore, we exclude the feature “destination” and then everything works well. <br>
 
-To assure that there are no other high correlated features in the data, we compute the Variance Inflation Factor (VIF).  
+    To assure that there are no other high correlated features in the data, we compute the Variance Inflation Factor (VIF).  
 
-![](https://ppt.cc/fNK11x@.png)
+    ![](https://ppt.cc/fNK11x@.png)
 
-Due to the existence of categorical variables, R computes the GVIF ^ (1 / (2 * DF)) instead of VIF. Typically, if the value is greater than 10, there would be problems. As the table above shows, all the variables except precipProbability have very low value of GVIF ^ (1 / (2 * DF)). Even the value of precipProbability is lower than 10, so we keep all the variables. 
+    Due to the existence of categorical variables, R computes the GVIF ^ (1 / (2 * DF)) instead of VIF. Typically, if the value is greater than 10, there would be problems. As the table above shows, all the variables except precipProbability have very low value of GVIF ^ (1 / (2 * DF)). Even the value of precipProbability is lower than 10, so we keep all the variables. 
 
 -	**Logistic Regression** <br>
 The same issue of the perfect multicollinearity appears when we run the Logistic Regression, so we use the exact same method to deal with it. The only difference between the Logistic Regression and Linear Probability Model is that we have to treat the dependent variables as the factor in Logistic Regression but integer in Linear Probability Model. 
