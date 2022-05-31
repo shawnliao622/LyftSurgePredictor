@@ -53,3 +53,14 @@ From 9 am to 6 pm or on Wednesday and Thursday, there are more surge rides than 
 ![](https://ppt.cc/fTttOx@.png)
 ![](https://ppt.cc/faSFix@.png)
 
+-	**Weather** <br>
+When it is raining or going to rain, there are more surge rides than average.
+
+![](https://ppt.cc/fNEiHx@.png)
+
+### 4. Research Question
+Ride-sourcing companies like Lyft have become an extremely popular mode of transportation worldwide in the 21st century. With the COVID-19 pandemic, Lyft has still been providing a safe transportation option to those who want to avoid public transportation. However, while public transportation systems have a fixed pricing strategy, these companies do not. Lyft uses surging in real time to help balance the supply and demand. We decided to predict if there would be a surge and analyze it using classification models. <br>
+
+This dataset was chosen because it had data on many different variables that we thought could help in predicting if a surge was evident. Though the popularity in Lyft is constantly increasing, there isn’t much known about their surge and surge pricing. The goal of our project is to identify ways incorporated by Lyft in identifying whether or not there's a surge to the customers. Something to keep in mind with our dataset is that we had to oversample our data due to an imbalance in the Surge Multiplier. By doing so, we were able to build our classification models.
+
+### 5. Methodology
