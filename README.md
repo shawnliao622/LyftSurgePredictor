@@ -11,4 +11,5 @@ We aim to identify clues to the underlying mechanism employed by ride-hailing se
 
 -	**Data Description** <br>
 Our data is from Kaggle which includes data on cab information and weather. Here is the link to the original dataset https://www.kaggle.com/datasets/brllrb/uber-and-lyft-dataset-boston-ma?select=rideshare_kaggle.csv. 
-The data includes information on Uber and Lyft rides.
+<br> The data includes information on Uber and Lyft rides.
+
