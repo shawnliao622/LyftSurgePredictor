@@ -64,3 +64,17 @@ Ride-sourcing companies like Lyft have become an extremely popular mode of trans
 This dataset was chosen because it had data on many different variables that we thought could help in predicting if a surge was evident. Though the popularity in Lyft is constantly increasing, there isn’t much known about their surge and surge pricing. The goal of our project is to identify ways incorporated by Lyft in identifying whether or not there's a surge to the customers. Something to keep in mind with our dataset is that we had to oversample our data due to an imbalance in the Surge Multiplier. By doing so, we were able to build our classification models.
 
 ### 5. Methodology
+For our research question on predicting the Lyft surge, we decided to convert the Surge Multiplier to a dummy variable called New Surge Multiplier. For this variable, if the surge is over 1 then the New Surge Multiplier is 1 meaning that there is a surge and if it’s 1 then the New Surge Multiplier is 0 meaning that there isn’t a surge. Since we created this dummy variable and decided to focus on predicting this variable, we wanted to use classification methods. <br>
+
+The classification methods we used include ensemble methods, bagging, boosting, K nearest neighbors, naive bayes, classification tree, linear probability method, and logistic regression. We wanted to compare different classification models to find the ones with the best accuracies, AUC, sensitivity, and specificity that produce the best prediction results. 
+
+### 6. Results & Findings
+
+-	**Linear Probability Model** <br>
+Linear Probability Model is usually not a best choice for classification because it could result in the probability greater than 1 or less than 0, and is often affected by the outliers. However, as the basic model, it is a good choice to treat such model as the baseline. When we run this model, the result shows that the coefficient of “destination” is NA and the predict function has the warning "prediction from a rank-deficient fit may be misleading". These imply that our data has the perfect multicollinearity even though we have checked the correlation between features before. Therefore, we exclude the feature “destination” and then everything works well. <br>
+
+To assure that there are no other high correlated features in the data, we compute the Variance Inflation Factor (VIF).  
+
+![](https://ppt.cc/fNK11x@.png)
+
+Due to the existence of categorical variables, R computes the GVIF ^ (1 / (2 * DF)) instead of VIF. Typically, if the value is greater than 10, there would be problems. As the table above shows, all the variables except precipProbability have very low value of GVIF ^ (1 / (2 * DF)). Even the value of precipProbability is lower than 10, so we keep all the variables. 
